@@ -23,13 +23,15 @@ myFunction();
 
 /* Create a function called `summation` that accepts a parameter and uses a counter to return the summation of that number. For example, `summation(4)` should return 10 because 1+2+3+4 is 10. */
 function summation(num){
-  let numArray = [];
-  numArray.push(num);
-  if(num > 0){
-    numArray.push(num - 1);
-  };
-  numArray.reduce((total, num) => {
-    total += num
+  let numArray = [num];
+  numArray.forEach(e => {
+    if(e > 0){
+      numArray.push(num - 1);
+    };
+  });
+  
+  numArray.reduce((total, accumulator) => {
+    total + accumulator
   }, 0)
 };
 
